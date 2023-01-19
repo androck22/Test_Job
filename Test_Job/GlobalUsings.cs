@@ -1,0 +1,9 @@
+﻿global using AngleSharp.Dom;
+global using System.Text.Json;
+global using Test_Job.Models;
+global using Test_Job.Services.Interfaces;
+global using System.Security.Cryptography;
+global using System.Text;
+global using Test_Job.Services;
+global using Microsoft.AspNetCore.Mvc;
+global using System.ComponentModel.DataAnnotations;
