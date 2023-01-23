@@ -1,5 +1,6 @@
 ﻿namespace Test_Job.Models
 {
+	[Serializable]
 	public class ResponseFileOutput
 	{
 		public int Is_error { get; set; }

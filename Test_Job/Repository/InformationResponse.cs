@@ -63,6 +63,31 @@ namespace Test_Job.Repository
 				Emails_list = emailList
 			};
 
+
+			string path = "response1.json";
+			FileInfo fileInf = new FileInfo(path);
+
+			if (!fileInf.Exists)
+			{
+				path = "response1.json";
+			}
+			else
+			{
+				path = "response2.json";
+			}
+			
+
+			using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+			{
+				var options = new JsonSerializerOptions
+				{
+					WriteIndented = true
+				};
+
+				await JsonSerializer.SerializeAsync<ResponseFileOutput>(fs, responseFile, options);
+				Console.WriteLine("Данные были сохранены в файл");
+			}
+
 			return responseFile;
 		}
 	}
