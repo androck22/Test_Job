@@ -1,6 +1,4 @@
-﻿using Test_Job.Repository;
-
-namespace Test_Job.Controllers
+﻿namespace Test_Job.Controllers
 {
 	[ApiController]
 	[Route("api/[controller]")]

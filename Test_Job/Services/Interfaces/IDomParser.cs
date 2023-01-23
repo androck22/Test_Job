@@ -2,6 +2,6 @@
 {
 	public interface IDomParser
 	{
-		List<string> Parse(IDocument document, string selector);
+		List<string> Parse(IHtmlDocument document, string selector);
 	}
 }

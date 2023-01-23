@@ -7,3 +7,8 @@ global using System.Text;
 global using Test_Job.Services;
 global using Microsoft.AspNetCore.Mvc;
 global using System.ComponentModel.DataAnnotations;
+global using AngleSharp.Html.Dom;
+global using AngleSharp.Html.Parser;
+global using Test_Job.Models.Error;
+global using Test_Job.Repository;
+global using System.Text.RegularExpressions;

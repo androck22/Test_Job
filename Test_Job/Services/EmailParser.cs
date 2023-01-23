@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace Test_Job.Services
+﻿namespace Test_Job.Services
 {
 	public class EmailParser : IEmailParser
 	{
@@ -36,14 +34,17 @@ namespace Test_Job.Services
 
 		public void AddEmail(string email)
 		{
-			Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+			Regex regex = new Regex(@"\w*@\w*.\w*");
 			MatchCollection matches = regex.Matches(email);
 
 			if (matches.Count > 0)
 			{
 				foreach (Match match in matches)
 				{
-					emailList.Add(match.Value);
+					if (!emailList.Exists(e => e == match.Value))
+					{
+						emailList.Add(match.Value);
+					}
 				}
 			}
 		}

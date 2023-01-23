@@ -2,6 +2,6 @@
 {
 	public interface IDomBuilder
 	{
-		Task<IDocument> DomBuild(string page);
+		Task<IHtmlDocument> DomBuild(string page);
 	}
 }

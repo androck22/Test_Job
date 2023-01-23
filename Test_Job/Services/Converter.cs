@@ -1,6 +1,4 @@
-﻿using Test_Job.Models.Error;
-
-namespace Test_Job.Services
+﻿namespace Test_Job.Services
 {
 	public class Converter : IConverter
 	{

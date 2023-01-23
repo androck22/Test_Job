@@ -1,6 +1,4 @@
-﻿using Test_Job.Models.Error;
-
-namespace Test_Job.Repository
+﻿namespace Test_Job.Repository
 {
 	public class InformationResponse : IInformationResponse
 	{
@@ -36,7 +34,7 @@ namespace Test_Job.Repository
 			string page = _converter.ToBase64Decode(file.Page_b64);
 
 			// парсинг page (преобразование HTML-текста в DOM-объект)
-			IDocument document = await _domBuilder.DomBuild(page);
+			IHtmlDocument document = await _domBuilder.DomBuild(page);
 
 			// выбираем все элементы по CSS-селектору
 			var listElements = _domParser.Parse(document, file.Selector);

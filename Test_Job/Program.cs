@@ -1,7 +1,4 @@
 
-using Test_Job.Models.Error;
-using Test_Job.Repository;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
