@@ -37,7 +37,7 @@
 			IHtmlDocument document = await _domBuilder.DomBuild(page);
 
 			// выбираем все элементы по CSS-селектору
-			var listElements = _domParser.Parse(document, file.Selector);
+			var listElements = _domParser.Parse(document, file.Selector, file.Attribute);
 
 			// получаем значения всех email-адресов в коде страницы
 			var emailList = _emailParser.ParseEmail(document);

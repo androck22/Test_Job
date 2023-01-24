@@ -2,7 +2,7 @@
 {
 	public class DomParser : IDomParser
 	{
-		public List<string> Parse(IHtmlDocument document, string selector)
+		public List<string> Parse(IHtmlDocument document, string selector, string attribute)
 		{
 			if (document == null)
 				throw new ArgumentNullException(nameof(document));
@@ -10,23 +10,12 @@
 			if (String.IsNullOrEmpty(selector))
 				throw new ArgumentNullException(nameof(selector));
 
-			Regex regex = new Regex(@"src|href");
-			MatchCollection matches = regex.Matches(selector);
-			string atribute = string.Empty;
-			if (matches.Count > 0)
-			{
-				foreach (Match match in matches)
-				{
-					atribute = match.Value;
-				}
-			}
-
 			var list = new List<string>();
 			var items = document.QuerySelectorAll(selector);
 
 			foreach (var item in items)
 			{
-				list.Add(item.GetAttribute(atribute));
+				list.Add(item.GetAttribute(attribute));
 			}
 
 			return list;
